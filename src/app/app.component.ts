@@ -8,6 +8,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styles: [],
 })
-export class AppComponent {
-  title = 'interactive-comments-section';
-}
+export class AppComponent {}
