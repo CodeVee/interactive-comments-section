@@ -17,10 +17,28 @@ module.exports = {
       },
       'blue': {
         'moderate': '#5357B6',
-        'light-grayish': '#C5C6EF'
+        'light-grayish': '#C5C6EF',
+        'grayish': '#67727E',
+        'dark': '#334253'
+      },
+      'red': {
+        'soft': '#ED6368'
       }
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '0.8': '0.8rem',
+        '1.6': '1.6rem',
+        '2.4': '2.4rem',
+        '3.2': '3.2rem'
+      },
+      borderRadius: {
+        'bs': '0.8rem'
+      },
+      fontSize: {
+        'bs': '1.6rem'
+      }
+    },
   },
   plugins: [],
 };
