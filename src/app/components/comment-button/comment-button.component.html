@@ -2,6 +2,6 @@
   [ngClass]="{'text-blue-moderate': btnType !== 'delete', 'text-red-soft': btnType === 'delete'}"
   class="flex items-center gap-0.8 font-medium  text-bs"
   (click)="clickBtn()">
-  <img src="assets/{{btnType}}-icon.svg" alt="reply">
+  <img src="assets/icons/icon-{{btnType}}.svg" alt="reply">
   <span>{{ btnType | titlecase }}</span>
 </button>
