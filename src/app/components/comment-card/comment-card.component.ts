@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommentButtonComponent } from '../comment-button/comment-button.component';
-import { LikeCounterComponent } from '../like-counter/like-counter.component';
+import { ScoreCounterComponent } from '../score-counter/score-counter.component';
+import { UserComment } from 'src/app/models';
 
 @Component({
   selector: 'app-comment-card',
   standalone: true,
-  imports: [CommonModule, CommentButtonComponent, LikeCounterComponent],
+  imports: [CommonModule, CommentButtonComponent, ScoreCounterComponent],
   templateUrl: './comment-card.component.html',
-  styles: ['']
+  styles: []
 })
-export class CommentCardComponent {}
+export class CommentCardComponent {
+  @Input() comment!: UserComment
+
+  increaseScore() {
+    this.comment.score++
+  }
+  decreaseScore() {
+    this.comment.score--
+  }
+}

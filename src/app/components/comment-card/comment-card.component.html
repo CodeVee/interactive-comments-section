@@ -1,16 +1,16 @@
 <div class="p-2.4 bg-white rounded-bs flex gap-2.4">
-  <app-like-counter></app-like-counter>
+  <app-score-counter [score]="comment.score" (scoreIncreased)="increaseScore()" (scoreDecreased)="decreaseScore()"/>
   <div class="flex flex-col gap-6">
     <div class="flex justify-between">
       <div class="flex gap-1.6">
         <figure class="h-3.2 w-3.2 rounded-full">
-          <img src="assets/test-image.png" alt="test" class="w-full">
+          <img [src]="comment.user.image.webp" alt="avatar" class="w-full">
         </figure>
         <div class="flex gap-0.8 self-center">
-          <span class="font-medium text-bs text-blue-dark">amyrobson</span>
+          <span class="font-medium text-bs text-blue-dark">{{ comment.user.username }}</span>
           <span class="bg-blue-moderate rounded-[2px] font-medium text-xl text-white px-2 h-8 self-center">you</span>
         </div>
-        <span class="font-normal text-bs text-blue-grayish self-center">1 month ago</span>
+        <span class="font-normal text-bs text-blue-grayish self-center">{{ comment.createdAt }}</span>
       </div>
       <div class="flex gap-2.4 items-center">
         <app-comment-button btnType="delete"></app-comment-button>
@@ -19,9 +19,8 @@
       </div>
     </div>
     <p class="font-normal text-bs text-blue-grayish">
-      <span class="text-blue-moderate font-medium">@ramsesmiron</span>
-      Impressive! Though it seems the drag feature could be improved. But overall it looks incredible.
-      You’ve nailed the design and the responsiveness at various breakpoints works really well.
+      <span *ngIf="comment.replyingTo" class="text-blue-moderate font-medium">@{{comment.replyingTo}}</span>
+      {{comment.content}}
     </p>
   </div>
 </div>

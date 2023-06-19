@@ -1,8 +1,8 @@
-import { Component, OnInit, effect, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommentContainerComponent } from './components';
 import { CommentService } from './services/comment.service';
-import { Comment } from './models'
+import { UserComment } from './models'
 import { take } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  comments = signal<Comment[]>([])
+  comments = signal<UserComment[]>([])
   constructor(private service: CommentService) {}
 
   ngOnInit(): void {

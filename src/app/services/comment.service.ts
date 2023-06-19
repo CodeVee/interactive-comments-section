@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Comment, DataResponse, User } from '../models';
+import { UserComment, DataResponse, User } from '../models';
 import { Observable, map, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,7 +12,7 @@ export class CommentService {
 
   constructor(private http: HttpClient) {}
 
-  getComments(): Observable<Comment[]> {
+  getComments(): Observable<UserComment[]> {
 
     return this.http.get<DataResponse>(this.jsonURL)
     .pipe(

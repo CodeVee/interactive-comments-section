@@ -1,8 +1,7 @@
-<app-comment-card></app-comment-card>
+<app-comment-card [comment]="comment"></app-comment-card>
 <div class="flex gap-4.3 pl-4.3 mt-8">
   <span class="w-[2px] bg-gray-light"></span>
   <div class="flex flex-col gap-2.4">
-    <app-comment-card></app-comment-card>
-    <app-comment-card></app-comment-card>
+    <app-comment-card *ngFor="let replyComment of comment.replies" [comment]="replyComment"></app-comment-card>
   </div>
 </div>

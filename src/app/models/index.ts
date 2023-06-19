@@ -10,20 +10,18 @@ interface Image {
   webp: string
 }
 
-export interface Comment {
+export interface UserComment {
   id: number
   content: string
   createdAt: string
   score: number
   user: User
-  replies: ReplyComment[]
+  replyingTo?: string
+  replies: UserComment[]
 }
 
-interface ReplyComment extends Comment {
-  replyingTo: string
-}
 
 export interface DataResponse {
   currentUser: User
-  comments: Comment[]
+  comments: UserComment[]
 }
