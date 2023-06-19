@@ -13,7 +13,8 @@ module.exports = {
       current: 'currentColor',
       'white': '#ffffff',
       'gray': {
-        'very-light': '#F5F6FA'
+        'very-light': '#F5F6FA',
+        'light': '#E9EBF0'
       },
       'blue': {
         'moderate': '#5357B6',
@@ -30,7 +31,9 @@ module.exports = {
         '0.8': '0.8rem',
         '1.6': '1.6rem',
         '2.4': '2.4rem',
-        '3.2': '3.2rem'
+        '3.2': '3.2rem',
+        '4.3': '4.3rem',
+        '6.4': '6.4rem'
       },
       borderRadius: {
         'bs': '0.8rem'

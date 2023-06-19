@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LikeCounterComponent } from '../like-counter/like-counter.component';
-import { CommentButtonComponent } from '../comment-button/comment-button.component';
+import { CommentCardComponent } from '../comment-card/comment-card.component';
 
 @Component({
   selector: 'app-comment-container',
   standalone: true,
-  imports: [CommonModule, LikeCounterComponent, CommentButtonComponent],
+  imports: [CommonModule, CommentCardComponent],
   templateUrl: './comment-container.component.html',
   styles: []
 })
