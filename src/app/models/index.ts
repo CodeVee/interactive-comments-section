@@ -17,6 +17,7 @@ export interface UserComment {
   score: number
   user: User
   replyingTo?: string
+  currentUser: boolean
   replies: UserComment[]
 }
 

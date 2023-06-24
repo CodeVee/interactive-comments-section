@@ -17,7 +17,17 @@ export class CommentService {
     return this.http.get<DataResponse>(this.jsonURL)
     .pipe(
       tap(data => this.currentUser.set(data.currentUser)),
-      map(data => data.comments)
+      map(data => {
+        return data.comments.map(comment => {
+          comment.currentUser = comment.user.username === data.currentUser.username
+
+          comment.replies = comment.replies.map(reply => {
+            reply.currentUser = reply.user.username === data.currentUser.username
+            return reply
+          })
+          return comment
+        })
+      })
     )
   }
 }
