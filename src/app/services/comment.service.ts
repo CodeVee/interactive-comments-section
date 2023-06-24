@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class CommentService {
 
-  currentUser = signal<User | null>(null)
+  currentUser = signal<User | undefined>(undefined)
 
   private jsonURL = 'assets/data.json'
 

@@ -1,0 +1,10 @@
+<div class="p-2.4 bg-white rounded-bs flex gap-1.6">
+  <figure class="h-3.2 w-3.2 rounded-full">
+    <img [src]="currentUser?.image?.webp" alt="avatar" class="w-full">
+  </figure>
+  <textarea
+    class="h-9.6 flex-1 py-1.2 px-2.4 text-blue-grayish font-normal text-bs border border-gray-light rounded-bs resize-none"
+    placeholder="Add a comment…" >
+  </textarea>
+  <button class="bg-blue-moderate uppercase w-10.4 h-4.8 text-white font-medium text-bs rounded-bs">{{ btnType }}</button>
+</div>

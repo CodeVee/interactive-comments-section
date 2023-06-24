@@ -5,11 +5,12 @@ import { CommentService } from './services/comment.service';
 import { UserComment } from './models'
 import { take } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { CommentCardFormComponent } from './components/comment-card-form/comment-card-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, CommentContainerComponent],
+  imports: [CommonModule, HttpClientModule, CommentContainerComponent, CommentCardFormComponent],
   providers: [CommentService],
   templateUrl: './app.component.html',
   styles: [],
@@ -17,11 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppComponent implements OnInit {
 
   comments = signal<UserComment[]>([])
+  currentUser = this.service.currentUser
   constructor(private service: CommentService) {}
 
   ngOnInit(): void {
     this.service.getComments()
       .pipe(take(1))
-      .subscribe(comments => this.comments.set(comments));
+      .subscribe(comments => this.comments.set(comments))
   }
 }
