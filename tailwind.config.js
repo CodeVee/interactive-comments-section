@@ -23,7 +23,8 @@ module.exports = {
         'dark': '#334253'
       },
       'red': {
-        'soft': '#ED6368'
+        'soft': '#ED6368',
+        'pale': '#FFB8BB'
       }
     },
     extend: {
