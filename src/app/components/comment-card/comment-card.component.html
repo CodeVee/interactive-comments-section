@@ -1,6 +1,6 @@
 <div class="p-2.4 bg-white rounded-bs flex gap-2.4">
   <app-score-counter [score]="comment.score" (scoreIncreased)="increaseScore()" (scoreDecreased)="decreaseScore()"/>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 flex-1">
     <div class="flex justify-between">
       <div class="flex gap-1.6">
         <figure class="h-3.2 w-3.2 rounded-full">
@@ -14,13 +14,27 @@
       </div>
       <div class="flex gap-2.4 items-center">
         <app-comment-button *ngIf="comment.currentUser" btnType="delete"></app-comment-button>
-        <app-comment-button *ngIf="comment.currentUser" btnType="edit"></app-comment-button>
-        <app-comment-button *ngIf="!comment.currentUser" btnType="reply"></app-comment-button>
+        <app-comment-button (btnClicked)="toggleEditForm()" *ngIf="comment.currentUser" btnType="edit"></app-comment-button>
+        <app-comment-button (btnClicked)="toggleReplyForm()" *ngIf="!comment.currentUser" btnType="reply"></app-comment-button>
       </div>
     </div>
-    <p class="font-normal text-bs text-blue-grayish">
+    <p *ngIf="!isEditState;else edit" class="font-normal text-bs text-blue-grayish">
       <span *ngIf="comment.replyingTo" class="text-blue-moderate font-medium">@{{comment.replyingTo}}</span>
       {{comment.content}}
     </p>
+    <ng-template #edit>
+      <div class="flex flex-col gap-1.6">
+        <textarea
+          [(ngModel)]="updateComment"
+          class="h-9.6 py-1.2 px-2.4 text-blue-grayish font-normal text-bs leading-10 border border-gray-light rounded-bs resize-none
+          caret-blue-moderate focus:border-blue-moderate focus:ring-offset-0 focus:ring-transparent hover:cursor-pointer"
+          >
+        </textarea>
+        <button class="bg-blue-moderate hover:bg-blue-light-grayish self-end uppercase w-10.4 h-4.8 text-white font-medium text-bs rounded-bs">update</button>
+      </div>
+    </ng-template>
   </div>
+</div>
+<div *ngIf="isReplyState" class="mt-0.8">
+  <app-comment-card-form btnType="reply" [currentUser]="currentUser()" [otherUsername]="comment.user.username"/>
 </div>

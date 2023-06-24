@@ -3,7 +3,8 @@
     <img [src]="currentUser?.image?.webp" alt="avatar" class="w-full">
   </figure>
   <textarea
-    class="h-9.6 flex-1 py-1.2 px-2.4 text-blue-grayish font-normal text-bs border border-gray-light rounded-bs resize-none
+    [(ngModel)]="comment"
+    class="h-9.6 flex-1 py-1.2 px-2.4 text-blue-grayish font-normal text-bs leading-10 border border-gray-light rounded-bs resize-none
     caret-blue-moderate focus:border-blue-moderate focus:ring-offset-0 focus:ring-transparent hover:cursor-pointer"
     placeholder="Add a comment…" >
   </textarea>
