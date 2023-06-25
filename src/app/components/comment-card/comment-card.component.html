@@ -13,7 +13,7 @@
         <span class="font-normal text-bs text-blue-grayish self-center">{{ comment.createdAt }}</span>
       </div>
       <div class="flex gap-2.4 items-center">
-        <app-comment-button *ngIf="comment.currentUser" btnType="delete"></app-comment-button>
+        <app-comment-button (btnClicked)="showDeleteModal()" *ngIf="comment.currentUser" btnType="delete"></app-comment-button>
         <app-comment-button (btnClicked)="toggleEditForm()" *ngIf="comment.currentUser" btnType="edit"></app-comment-button>
         <app-comment-button (btnClicked)="toggleReplyForm()" *ngIf="!comment.currentUser" btnType="reply"></app-comment-button>
       </div>

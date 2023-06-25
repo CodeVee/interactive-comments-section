@@ -19,6 +19,7 @@ import { DeleteModalComponent } from './components/delete-modal/delete-modal.com
 export class AppComponent implements OnInit {
 
   comments = signal<UserComment[]>([])
+  showModal = this.service.modalMode
   currentUser = this.service.currentUser
   constructor(private service: CommentService) {}
 
@@ -26,5 +27,9 @@ export class AppComponent implements OnInit {
     this.service.getComments()
       .pipe(take(1))
       .subscribe(comments => this.comments.set(comments))
+  }
+
+  closeModal() {
+    this.service.resetModalMode()
   }
 }

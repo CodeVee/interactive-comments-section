@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class CommentService {
 
   currentUser = signal<User | undefined>(undefined)
+  modalMode = signal<boolean>(false)
 
   private jsonURL = 'assets/data.json'
 
@@ -29,5 +30,13 @@ export class CommentService {
         })
       })
     )
+  }
+
+  setModalMode() {
+    this.modalMode.set(true)
+  }
+
+  resetModalMode() {
+    this.modalMode.set(false)
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './delete-modal.component.html',
   styles: []
 })
-export class DeleteModalComponent {}
+export class DeleteModalComponent {
+  @Output() modalClosed = new EventEmitter<void>()
+
+  close() {
+    this.modalClosed.emit()
+  }
+}

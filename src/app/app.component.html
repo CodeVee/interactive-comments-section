@@ -5,8 +5,8 @@
       <app-comment-card-form [currentUser]="currentUser()" btnType="send" />
     </div>
   </div>
-  <div class="fixed h-screen w-full top-0 left-0 bg-black/50 flex justify-center items-center">
-    <app-delete-modal></app-delete-modal>
+  <div *ngIf="showModal()" class="fixed h-screen w-full top-0 left-0 bg-black/50 flex justify-center items-center">
+    <app-delete-modal (modalClosed)="closeModal()"></app-delete-modal>
   </div>
 </div>
 

@@ -45,4 +45,10 @@ export class CommentCardComponent {
       this.updateComment = ''
     }
   }
+
+  showDeleteModal() {
+    this.isEditState = false
+    this.isReplyState = false
+    this.service.setModalMode()
+  }
 }
