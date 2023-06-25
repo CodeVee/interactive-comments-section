@@ -1,10 +1,10 @@
-<div class="p-2.4 bg-white rounded-bs flex gap-1.6">
+<div class="p-2.4 bg-white rounded-bs flex flex-wrap lg:flex-nowrap gap-1.6 justify-between">
   <figure class="h-3.2 w-3.2 rounded-full">
     <img [src]="currentUser?.image?.webp" alt="avatar" class="w-full">
   </figure>
   <textarea
     [(ngModel)]="comment"
-    class="h-9.6 flex-1 py-1.2 px-2.4 text-blue-grayish font-normal text-bs leading-10 border border-gray-light rounded-bs resize-none
+    class="order-first lg:order-none h-9.6 w-full lg:flex-1 py-1.2 px-2.4 text-blue-grayish font-normal text-bs leading-10 border border-gray-light rounded-bs resize-none
     caret-blue-moderate focus:border-blue-moderate focus:ring-offset-0 focus:ring-transparent hover:cursor-pointer"
     placeholder="Add a comment…" >
   </textarea>

@@ -1,6 +1,6 @@
 <div class="p-2.4 bg-white rounded-bs flex gap-2.4">
-  <app-score-counter [score]="comment.score" (scoreIncreased)="increaseScore()" (scoreDecreased)="decreaseScore()"/>
-  <div class="flex flex-col gap-6 flex-1">
+  <app-score-counter class="hidden lg:block" [score]="comment.score" (scoreIncreased)="increaseScore()" (scoreDecreased)="decreaseScore()"/>
+  <div class="flex flex-col gap-1.6 lg:gap-6 flex-1">
     <div class="flex justify-between">
       <div class="flex gap-1.6">
         <figure class="h-3.2 w-3.2 rounded-full">
@@ -12,7 +12,7 @@
         </div>
         <span class="font-normal text-bs text-blue-grayish self-center">{{ comment.createdAt }}</span>
       </div>
-      <div class="flex gap-2.4 items-center">
+      <div class="lg:flex gap-2.4 items-center hidden">
         <app-comment-button (btnClicked)="showDeleteModal()" *ngIf="comment.currentUser" btnType="delete"></app-comment-button>
         <app-comment-button (btnClicked)="toggleEditForm()" *ngIf="comment.currentUser" btnType="edit"></app-comment-button>
         <app-comment-button (btnClicked)="toggleReplyForm()" *ngIf="!comment.currentUser" btnType="reply"></app-comment-button>
@@ -33,6 +33,14 @@
         <button class="bg-blue-moderate hover:bg-blue-light-grayish self-end uppercase w-10.4 h-4.8 text-white font-medium text-bs rounded-bs">update</button>
       </div>
     </ng-template>
+    <div class="flex justify-between">
+      <app-score-counter class="lg:hidden" [score]="comment.score" (scoreIncreased)="increaseScore()" (scoreDecreased)="decreaseScore()"/>
+      <div class="flex gap-2.4 items-center lg:hidden">
+        <app-comment-button (btnClicked)="showDeleteModal()" *ngIf="comment.currentUser" btnType="delete"></app-comment-button>
+        <app-comment-button (btnClicked)="toggleEditForm()" *ngIf="comment.currentUser" btnType="edit"></app-comment-button>
+        <app-comment-button (btnClicked)="toggleReplyForm()" *ngIf="!comment.currentUser" btnType="reply"></app-comment-button>
+      </div>
+    </div>
   </div>
 </div>
 <div *ngIf="isReplyState" class="mt-0.8">

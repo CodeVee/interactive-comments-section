@@ -1,11 +1,11 @@
 <div class="relative">
-  <div class="bg-gray-very-light min-h-[102.4rem] py-6.4">
-    <div class="w-[73rem] mx-auto flex flex-col gap-8">
+  <div class="bg-gray-very-light lg:min-h-[102.4rem] py-3.2 lg:py-6.4">
+    <div class="lg:w-[73rem] mx-auto flex flex-col gap-1.6 lg:gap-8 px-1.6 lg:px-0">
       <app-comment-container *ngFor="let comment of comments()" [comment]="comment" />
       <app-comment-card-form [currentUser]="currentUser()" btnType="send" />
     </div>
   </div>
-  <div *ngIf="showModal()" class="fixed h-screen w-full top-0 left-0 bg-black/50 flex justify-center items-center">
+  <div *ngIf="showModal()" class="fixed h-screen w-full top-0 left-0 bg-black/50 flex justify-center items-center px-1.6 lg:px-0">
     <app-delete-modal (modalClosed)="closeModal()"></app-delete-modal>
   </div>
 </div>
