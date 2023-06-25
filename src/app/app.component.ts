@@ -6,11 +6,12 @@ import { UserComment } from './models'
 import { take } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentCardFormComponent } from './components/comment-card-form/comment-card-form.component';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, CommentContainerComponent, CommentCardFormComponent],
+  imports: [CommonModule, HttpClientModule, CommentContainerComponent, CommentCardFormComponent, DeleteModalComponent],
   providers: [CommentService],
   templateUrl: './app.component.html',
   styles: [],

@@ -1,6 +1,12 @@
-<div class="bg-gray-very-light min-h-[102.4rem] py-6.4">
-  <div class="w-[73rem] mx-auto flex flex-col gap-8">
-    <app-comment-container *ngFor="let comment of comments()" [comment]="comment" />
-    <app-comment-card-form [currentUser]="currentUser()" btnType="send" />
+<div class="relative">
+  <div class="bg-gray-very-light min-h-[102.4rem] py-6.4">
+    <div class="w-[73rem] mx-auto flex flex-col gap-8">
+      <app-comment-container *ngFor="let comment of comments()" [comment]="comment" />
+      <app-comment-card-form [currentUser]="currentUser()" btnType="send" />
+    </div>
+  </div>
+  <div class="fixed h-screen w-full top-0 left-0 bg-black/50 flex justify-center items-center">
+    <app-delete-modal></app-delete-modal>
   </div>
 </div>
+

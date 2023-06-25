@@ -12,6 +12,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
+      'black': '#000000',
       'gray': {
         'very-light': '#F5F6FA',
         'light': '#E9EBF0'
@@ -44,7 +45,8 @@ module.exports = {
         'bs': '0.8rem'
       },
       fontSize: {
-        'bs': '1.6rem'
+        'bs': '1.6rem',
+        '2bs': '2.4rem'
       }
     },
   },
